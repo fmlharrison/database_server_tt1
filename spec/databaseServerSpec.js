@@ -9,7 +9,7 @@ describe("Database Server", function () {
     it("return a status of 200", function (done) {
       request.get(baseUrl, function(error, response, body) {
         expect(response.statusCode).toBe(200);
-        done(); //this is a jasmine node funtion that acts as a callback to synchronize the expec function.
+        done();
       });
     });
 
@@ -27,7 +27,7 @@ describe("Database Server", function () {
     it("sets the data from the query string", function(done) {
       request.get("http://localhost:4000/set?name=felix", function(error, response, body) {
         expect(response.body).toBe("Your data has been stored");
-        done(); //this is a jasmine node funtion that acts as a callback to synchronize the expec function.
+        done();
       });
     });
 
@@ -39,7 +39,7 @@ describe("Database Server", function () {
       request.get("http://localhost:4000/get?key=name", function(error, response, body) {
         expect(response.body).toBe('felix');
         server.closeServer();
-        done(); //this is a jasmine node funtion that acts as a callback to synchronize the expec function.
+        done();
       });
 
     });
