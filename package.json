@@ -10,7 +10,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "./node_packages/.bin/jasmine-node spec"
+    "test": "jasmine-node spec"
   },
   "repository": {
     "type": "git",
