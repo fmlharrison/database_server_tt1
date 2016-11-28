@@ -38,10 +38,16 @@ describe("Database Server", function () {
     it("gets the data that was set", function(done) {
       request.get("http://localhost:4000/get?key=name", function(error, response, body) {
         expect(response.body).toBe('felix');
+        done();
+      });
+    });
+
+    it("returns nothing if data has not been saved", function(done) {
+      request.get("http://localhost:4000/get?key=animals", function(error, response, body) {
+        expect(response.body).toBe("Data could not be found.");
         server.closeServer();
         done();
       });
-
     });
 
   });
