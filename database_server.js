@@ -17,8 +17,7 @@ app.get('/set', function(req, res) {
   }
 
   res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end("Data saved!");
-  console.log(data);
+  res.end("Your data has been stored");
 });
 
 app.get('/get', function(req, res) {
@@ -29,7 +28,7 @@ app.get('/get', function(req, res) {
     response[reqKey[key]] = data[reqKey[key]];
   }
 
-  var json = JSON.stringify(response);
+  var json = response[reqKey[key]];
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end(json);
 });

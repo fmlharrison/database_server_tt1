@@ -26,7 +26,7 @@ describe("Database Server", function () {
 
     it("sets the data from the query string", function(done) {
       request.get("http://localhost:4000/set?name=felix", function(error, response, body) {
-        expect(response.body).toBe("Data saved!");
+        expect(response.body).toBe("Your data has been stored");
         done(); //this is a jasmine node funtion that acts as a callback to synchronize the expec function.
       });
     });
@@ -37,7 +37,7 @@ describe("Database Server", function () {
 
     it("gets the data that was set", function(done) {
       request.get("http://localhost:4000/get?key=name", function(error, response, body) {
-        expect(response.body).toBe('{"name":"felix"}');
+        expect(response.body).toBe('felix');
         server.closeServer();
         done(); //this is a jasmine node funtion that acts as a callback to synchronize the expec function.
       });
